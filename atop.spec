@@ -10,7 +10,6 @@ URL:       http://www.ATComputing.nl/atop
 Summary:   AT Computing System and Process Monitor
 License:   GPL
 Group:     Text tools 
-BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
 The program atop is an interactive monitor to view the load on
