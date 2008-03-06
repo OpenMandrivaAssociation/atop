@@ -10,7 +10,7 @@ URL:       http://www.ATComputing.nl/atop
 Summary:   AT Computing System and Process Monitor
 License:   GPL
 Group:     Text tools 
-Buildrequires: zlib1-devel
+Buildrequires: zlib1-devel ncurses-devel
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
