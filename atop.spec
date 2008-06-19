@@ -1,6 +1,6 @@
 %define name atop
 %define version 1.23
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:      %name
 Version:   %version
