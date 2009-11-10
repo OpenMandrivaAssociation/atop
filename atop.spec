@@ -1,11 +1,12 @@
 %define name atop
 %define version 1.23
-%define release %mkrel 3
+%define release %mkrel 4
 
 Name:      %name
 Version:   %version
 Release:   %release
 Source:   %{name}-%{version}.tar.bz2
+Patch1:	   atop-1.23-initscript_LSB.patch
 URL:       http://www.ATComputing.nl/atop
 Summary:   AT Computing System and Process Monitor
 License:   GPL
@@ -28,6 +29,7 @@ reports, similar to the program sar.
 
 %prep
 %setup -q
+%patch1 -p1 -b .LSB
 
 %build
 make
