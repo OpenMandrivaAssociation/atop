@@ -1,11 +1,11 @@
 %define name atop
-%define version 1.23
-%define release %mkrel 4
+%define version 1.24
+%define release %mkrel 1
 
 Name:      %name
 Version:   %version
 Release:   %release
-Source:   %{name}-%{version}.tar.bz2
+Source:    http://www.atcomputing.nl/Tools/atop/packages/%{name}-%{version}.tar.gz
 Patch1:	   atop-1.23-initscript_LSB.patch
 URL:       http://www.ATComputing.nl/atop
 Summary:   AT Computing System and Process Monitor
@@ -30,9 +30,10 @@ reports, similar to the program sar.
 %prep
 %setup -q
 %patch1 -p1 -b .LSB
+sed -i -e "s/CFLAGS  =/CFLAGS +=/" Makefile
 
 %build
-make
+CFLAGS="%{optflags}" %make
 
 %install
 rm    -rf 			  $RPM_BUILD_ROOT
