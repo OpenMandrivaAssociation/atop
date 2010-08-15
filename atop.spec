@@ -1,12 +1,12 @@
 %define name atop
-%define version 1.24
+%define version 1.25
 %define release %mkrel 1
 
 Name:      %name
 Version:   %version
 Release:   %release
 Source:    http://www.atcomputing.nl/Tools/atop/packages/%{name}-%{version}.tar.gz
-Patch1:	   atop-1.23-initscript_LSB.patch
+Patch1:	   atop-1.25-initscript_LSB.patch
 URL:       http://www.ATComputing.nl/atop
 Summary:   AT Computing System and Process Monitor
 License:   GPL
@@ -76,8 +76,8 @@ touch /var/log/atop/dummy_before /var/log/atop/dummy_after
 %{_mandir}/man1/atop.1*
 %{_mandir}/man1/atopsar.1*
 %config %{_initrddir}/atop
-/etc/atop/atop.daily
-/etc/cron.d/atop
-/etc/logrotate.d/psaccs_atop
-/etc/logrotate.d/psaccu_atop
+%{_sysconfdir}/%{name}/atop.daily
+%{_sysconfdir}/cron.d/atop
+%{_sysconfdir}/logrotate.d/psaccs_atop
+%{_sysconfdir}/logrotate.d/psaccu_atop
 %dir /var/log/atop/
