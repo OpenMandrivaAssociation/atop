@@ -1,6 +1,6 @@
 %define name atop
 %define version 1.25
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:      %name
 Version:   %version
@@ -11,7 +11,7 @@ URL:       http://www.ATComputing.nl/atop
 Summary:   AT Computing System and Process Monitor
 License:   GPL
 Group:     Text tools 
-Buildrequires: zlib1-devel ncurses-devel
+Buildrequires: zlib-devel ncurses-devel
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
