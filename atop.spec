@@ -81,3 +81,55 @@ touch /var/log/atop/dummy_before /var/log/atop/dummy_after
 %{_sysconfdir}/logrotate.d/psaccs_atop
 %{_sysconfdir}/logrotate.d/psaccu_atop
 %dir /var/log/atop/
+
+
+%changelog
+* Fri Jan 07 2011 Antoine Ginies <aginies@mandriva.com> 1.26-1mdv2011.0
++ Revision: 629520
+- atop version 1.26
+
+* Wed Dec 01 2010 Funda Wang <fwang@mandriva.org> 1.25-2mdv2011.0
++ Revision: 604338
+- rebuild for new zlib
+
+* Sun Aug 15 2010 Sandro Cazzaniga <kharec@mandriva.org> 1.25-1mdv2011.0
++ Revision: 569923
+- use %%{_sysconfdir} in file list
+- fix license according to COPYING file
+- rediff patch
+- update to 1.25
+
+* Fri Jan 29 2010 Frederik Himpe <fhimpe@mandriva.org> 1.24-1mdv2010.1
++ Revision: 498286
+- Update to new version 1.24
+- Use Mandriva CFLAGS
+
+* Tue Nov 10 2009 Andrey Borzenkov <arvidjaar@mandriva.org> 1.23-4mdv2010.1
++ Revision: 464255
+- patch1 - LSBify init script
+
+* Tue Sep 01 2009 Thierry Vignaud <tv@mandriva.org> 1.23-3mdv2010.0
++ Revision: 423974
+- rebuild
+
+* Thu Jun 19 2008 Thierry Vignaud <tv@mandriva.org> 1.23-2mdv2009.0
++ Revision: 226190
+- rebuild
+
+* Thu Mar 06 2008 Antoine Ginies <aginies@mandriva.com> 1.23-1mdv2008.1
++ Revision: 180922
+- add ncurses-devel buildrequires
+- it's zlib-devel buildrequires, not bzip2-devel requires
+- add bzip2-devel buildrequires
+- new version
+- new version 1.2.3
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+  + Erwan Velu <erwan@mandriva.org>
+    - Import atop
+
