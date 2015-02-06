@@ -1,6 +1,6 @@
 Name:      atop
 Version:   2.0.2
-Release:   1
+Release:   2
 Source0:   http://www.atoptool.nl/download/%{name}-%{version}.tar.gz
 URL:       http://www.ATComputing.nl/atop
 Summary:   AT Computing System and Process Monitor
