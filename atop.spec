@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:      atop
 Version:	2.6.0
 Release:	1
