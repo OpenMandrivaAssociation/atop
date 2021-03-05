@@ -1,5 +1,5 @@
 Name:      atop
-Version:	2.4.0
+Version:	2.6.0
 Release:	1
 Source0:   http://www.atoptool.nl/download/%{name}-%{version}.tar.gz
 URL:       http://www.ATComputing.nl/atop
