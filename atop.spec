@@ -35,7 +35,7 @@ install -Dp -m 0644 man/atop.1 	  %{buildroot}%{_mandir}/man1/atop.1
 install -Dp -m 0644 man/atopsar.1 %{buildroot}%{_mandir}/man1/atopsar.1
 install -Dp -m 0755 atop.init 	  %{buildroot}%{_initrddir}/atop
 install -Dp -m 0711 atop.daily	  %{buildroot}/etc/atop/atop.daily
-install -Dp -m 0644 atop.cronsystemd 	  %{buildroot}/etc/cron.d/atop
+#install -Dp -m 0644 atop.cronsystemd 	  %{buildroot}/etc/cron.d/atop
 install -Dp -m 0644 psaccs_atop	  %{buildroot}/etc/logrotate.d/psaccs_atop
 install -Dp -m 0644 psaccu_atop	  %{buildroot}/etc/logrotate.d/psaccu_atop
 install -d  -m 0755 		  %{buildroot}/var/log/atop
@@ -64,7 +64,7 @@ touch /var/log/atop/dummy_before /var/log/atop/dummy_after
 %{_mandir}/man1/atopsar.1*
 %config %{_initrddir}/atop
 %{_sysconfdir}/%{name}/atop.daily
-%{_sysconfdir}/cron.d/atop
+#{_sysconfdir}/cron.d/atop
 %{_sysconfdir}/logrotate.d/psaccs_atop
 %{_sysconfdir}/logrotate.d/psaccu_atop
 %dir /var/log/atop/
