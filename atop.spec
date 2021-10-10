@@ -1,8 +1,8 @@
-%global debug_package %{nil}
+#global debug_package %{nil}
 
 Name:      atop
 Version:	2.6.0
-Release:	1
+Release:	2
 Source0:   http://www.atoptool.nl/download/%{name}-%{version}.tar.gz
 URL:       http://www.ATComputing.nl/atop
 Summary:   AT Computing System and Process Monitor
@@ -59,7 +59,7 @@ touch /var/log/atop/dummy_before /var/log/atop/dummy_after
 %_preun_service atop
 
 %files
-%doc README COPYING README AUTHOR ChangeLog
+%doc README COPYING AUTHOR ChangeLog
 %{_bindir}/atop
 %{_bindir}/atopsar
 %{_mandir}/man1/atop.1*
