@@ -1,4 +1,4 @@
-#global debug_package %{nil}
+%define _empty_manifest_terminate_build 0
 
 Name:      atop
 Version:	2.6.0
