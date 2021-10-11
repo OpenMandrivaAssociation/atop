@@ -8,7 +8,8 @@ URL:       http://www.ATComputing.nl/atop
 Summary:   AT Computing System and Process Monitor
 License:   GPL
 Group:     Text tools 
-Buildrequires: pkgconfig(zlib) pkgconfig(ncurses)
+Buildrequires: pkgconfig(zlib)
+Buildrequires: pkgconfig(ncurses)
 
 %description
 The program atop is an interactive monitor to view the load on
@@ -24,11 +25,11 @@ The program atopsar can be used to view system-level statistics as
 reports, similar to the program sar.
 
 %prep
-%setup -q
+%autosetup -p1
 sed -i -e "s/CFLAGS  =/CFLAGS +=/" Makefile
 
 %build
-CFLAGS="%{optflags}" %make
+CFLAGS="%{optflags}" %make_build
 
 %install
 install -Dp -m 04711 atop 	  %{buildroot}%{_bindir}/atop
@@ -43,20 +44,14 @@ install -Dp -m 0644 psaccu_atop	  %{buildroot}/etc/logrotate.d/psaccu_atop
 install -d  -m 0755 		  %{buildroot}/var/log/atop
 
 %post
-%_post_service atop
-
-# save today's logfile (format might be incompatible)
-mv /var/log/atop/atop_`date +%Y%m%d` /var/log/atop/atop_`date +%Y%m%d`.save \
-					2> /dev/null || :
-
-# create dummy files to be rotated
-touch /var/log/atop/dummy_before /var/log/atop/dummy_after
-
-# activate daily logging for today
-/etc/atop/atop.daily
+%systemd_post %{name}
+%systemd_post atopacct
+%systemd_post atop-rotate.timer
 
 %preun
-%_preun_service atop
+%systemd_preun %{name}
+%systemd_preun atopacct
+%systemd_preun atop-rotate.timer
 
 %files
 %doc README COPYING AUTHOR ChangeLog
