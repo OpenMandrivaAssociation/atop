@@ -8,8 +8,8 @@ URL:       http://www.ATComputing.nl/atop
 Summary:   AT Computing System and Process Monitor
 License:   GPL
 Group:     Text tools 
-Buildrequires: pkgconfig(zlib)
-Buildrequires: pkgconfig(ncurses)
+BuildRequires: pkgconfig(zlib)
+BuildRequires: pkgconfig(ncurses)
 
 %description
 The program atop is an interactive monitor to view the load on
@@ -54,7 +54,7 @@ install -d  -m 0755 		  %{buildroot}/var/log/atop
 %systemd_preun atop-rotate.timer
 
 %files
-%doc README COPYING AUTHOR ChangeLog
+%doc README COPYING ChangeLog
 %{_bindir}/atop
 %{_bindir}/atopsar
 %{_mandir}/man1/atop.1*
