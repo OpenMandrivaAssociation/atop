@@ -10,6 +10,7 @@ License:   GPL
 Group:     Text tools 
 BuildRequires: pkgconfig(zlib)
 BuildRequires: pkgconfig(ncurses)
+BuildRequires: pkgconfig(glib-2.0)
 
 %description
 The program atop is an interactive monitor to view the load on
