@@ -1,7 +1,7 @@
 %define _empty_manifest_terminate_build 0
 
 Name:      atop
-Version:	2.11.0
+Version:	2.11.1
 Release:	1
 Source0:   http://www.atoptool.nl/download/%{name}-%{version}.tar.gz
 URL:       https://www.ATComputing.nl/atop
